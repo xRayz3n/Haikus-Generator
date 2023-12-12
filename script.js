@@ -1,9 +1,9 @@
 // Define the character set used in your model training
-const chars = ['\n', ' ', '!', '$', '&', "'", ',', '-', '.', '3', ':', ';', '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; // Add or remove characters as needed
+const chars = ['\n', ' ', '!', '"', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', ']', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '~', '\xa0', 'à', 'ä', 'é', 'ï', 'ü', 'ē', 'ū', 'ŭ', '–', '—', '‘', '’', '“', '”', '…']; // Add or remove characters as needed
 const stoi = {};
 chars.forEach((char, index) => stoi[char] = index);
 const itos = chars;
-const vocabSize = 65;
+const vocabSize = 106;
 const sequence_length = 64;
 // Encode and decode functions
 function encode(str) {
@@ -56,7 +56,7 @@ let session;
 
 // Load the ONNX model using ONNX Runtime Web
 async function loadModel() {
-    session = await ort.InferenceSession.create("./gpt2.onnx");
+    session = await ort.InferenceSession.create("./haikus.onnx");
 }
 
 // Function to generate text based on the user input
