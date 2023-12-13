@@ -61,9 +61,9 @@ async function loadModel() {
 
 // Function to generate text based on the user input
 async function generateText() {
-
     if (!session) {
         console.error('Model not loaded yet');
+        document.getElementById('outputText').innerText = 'Error: model not loaded yet, please wait'
         return;
     }
 
@@ -71,6 +71,7 @@ async function generateText() {
     let maxLines = document.getElementById('lineInput').value;
     if (!inputText) {
         console.error('Input text is empty');
+        document.getElementById('outputText').innerText = 'Error: input text is empty'
         return;
     }
     let encodedInput = encode(inputText);
