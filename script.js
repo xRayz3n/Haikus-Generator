@@ -85,9 +85,10 @@ async function generateText() {
 
     // Create the input tensor with the correct shape
     // Run the model
-    let generatedText = inputText;
     let context = inputText;
     let lines = 0;
+
+    document.getElementById('generateButton').style.visibility = 'hidden';
     try {
         while (lines < maxLines) {
         
@@ -119,6 +120,8 @@ async function generateText() {
     } catch (error) {
         console.error('Error during model run:', error);
     }
+
+    document.getElementById('generateButton').style.visibility = 'visible';
 }
 
 // Event listener for the Generate button
@@ -126,5 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('generateButton').addEventListener('click', generateText);
 });
 
+document.getElementById('generateButton').style.visibility = 'hidden';
 // Load the model immediately when the script is loaded
 loadModel();
+document.getElementById('generateButton').style.visibility = 'visible';
