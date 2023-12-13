@@ -107,9 +107,8 @@ async function generateText() {
         }
 
         if (generatedLetter == '\n') {
-            lines+=1;
             if (context[context.length-2] == '\n') {
-                lines-=1;
+                lines+=1;
             }
         }
 
