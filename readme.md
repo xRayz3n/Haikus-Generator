@@ -6,7 +6,7 @@ The Haiku Generator is an innovative AI-powered tool designed to create captivat
 ## Features
 - AI-driven text generation.
 - Simple and intuitive web interface.
-- Generates haikus in traditional 5-7-5 syllable structure.
+- Generates haikus in a traditional structure.
 
 ## Setup
 To set up the Haiku Generator, follow these steps:
