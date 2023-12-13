@@ -25,7 +25,7 @@ user_input = input("from what do you want to start ? ")
 context = torch.tensor([encode(user_input)], dtype=torch.int32, device='cuda')
 print(decode(model.generate(context, max_new_tokens=100)[0].tolist()))
 
-dummy_input = torch.zeros(1, 128, dtype=torch.int32).to("cuda")
+dummy_input = torch.zeros(1, 64, dtype=torch.int32).to("cuda")
 torch.onnx.export(model,
                 dummy_input,
                 "haikus.onnx",
